@@ -6,7 +6,13 @@ import {
 import {Provider} from 'react-redux'
 import {store} from '../../redux/store'
 import Topic from "../Topic/Topic";
+
+import Cabinet from "../Cabinet/Cabinet";
+
 import Question from "../Question/Question";
+import Prifole from "../Profile/Profile";
+import Profile from "../Profile/Profile";
+
 
 
 
@@ -15,8 +21,9 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-          Hello World
-          <Topic/>
+          <Profile/>
+          {/*<Cabinet/>*/}
+          {/*<Topic/>*/}
         </div>
       </Provider>
     </BrowserRouter>

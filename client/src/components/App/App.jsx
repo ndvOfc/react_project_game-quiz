@@ -6,6 +6,7 @@ import {
 import {Provider} from 'react-redux'
 import {store} from '../../redux/store'
 import Topic from "../Topic/Topic";
+import Question from "../Question/Question";
 
 
 

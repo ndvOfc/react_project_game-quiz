@@ -3,15 +3,22 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import{Provider} from 'react-redux'
+import {Provider} from 'react-redux'
+import {store} from '../../redux/store'
+import Topic from "../Topic/Topic";
+
 
 
 function App() {
   return (
-    <div className="App">
-      Hello World
-
-    </div>
+    <BrowserRouter>
+      <Provider store={store}>
+        <div className="App">
+          Hello World
+          <Topic/>
+        </div>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

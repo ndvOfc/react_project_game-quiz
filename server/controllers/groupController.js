@@ -5,7 +5,7 @@ class GroupController {
     async getGroup(req, res) {
         const { id } = req.params
         const groupToTopic = await Topic.findAll({where: {groupId: id}})
-        const questions = await Questions.findAll({where: {topicId: groupToTopic.id}})
+        const questions = await Questions.findAll()
         res.json({topics: groupToTopic, questions })
     }
 

@@ -212,8 +212,70 @@ module.exports = {
         topicId: gri1,
       });
     }
-     
-    
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq2[i],
+        answers: gra2[i],
+        price: grp2[i],
+        topicId: gri2,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq3[i],
+        answers: gra3[i],
+        price: grp3[i],
+        topicId: gri3,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq4[i],
+        answers: gra4[i],
+        price: grp4[i],
+        topicId: gr4,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq5[i],
+        answers: gra5[i],
+        price: grp5[i],
+        topicId: gri5,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq6[i],
+        answers: gra6[i],
+        price: grp6[i],
+        topicId: gri6,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq1[i],
+        answers: gra7[i],
+        price: grp7[i],
+        topicId: gri7,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq8[i],
+        answers: gra8[i],
+        price: grp8[i],
+        topicId: gri8,
+      });
+    }
+    for (let i = 0; i < 5; i++) {
+      await Questions.create({
+        questions: grq9[i],
+        answers: gra9[i],
+        price: grp9[i],
+        topicId: gri9,
+      });
+    }
     // questions: { type: DataTypes.STRING, allowNull: false },
     // answers: { type: DataTypes.STRING, allowNull: false },
     // price: { type: DataTypes.INTEGER, allowNull: false },

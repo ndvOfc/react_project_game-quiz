@@ -113,7 +113,7 @@ module.exports = {
     const grp3 = [100, 200, 300, 400, 500]
     const gri3 = 3
     //4
-    const grq4 = ['',
+    const grq4 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -129,7 +129,7 @@ module.exports = {
     const gri4 = 4
 
     //5
-    const grq5 = ['',
+    const grq5 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -144,7 +144,7 @@ module.exports = {
     const grp5 = [100, 200, 300, 400, 500]
     const gri5 = 5
     //6
-    const grq6 = ['',
+    const grq6 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -159,7 +159,7 @@ module.exports = {
     const grp6 = [100, 200, 300, 400, 500]
     const gri6 = 6
     //7
-    const grq7 = ['',
+    const grq7 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -174,7 +174,7 @@ module.exports = {
     const grp7 = [100, 200, 300, 400, 500]
     const gri7 = 7
     //8
-    const grq8 = ['',
+    const grq8 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -189,7 +189,7 @@ module.exports = {
     const grp8 = [100, 200, 300, 400, 500]
     const gri8 = 8
     //9
-    const grq9 = ['',
+    const grq9 = ['Джокер',
       'Агент 007',
       'Уолтер Уайт',
       'Харли Квин',
@@ -233,7 +233,7 @@ module.exports = {
         questions: grq4[i],
         answers: gra4[i],
         price: grp4[i],
-        topicId: gr4,
+        topicId: gri4,
       });
     }
     for (let i = 0; i < 5; i++) {

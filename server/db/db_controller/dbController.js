@@ -19,14 +19,48 @@ module.exports = {
   dropDb: async () => await sequelize.drop(),
 
   seedDb: async () => {
-    const username = ['name1', 'name2', 'name3'];
+    const name = ['name1', 'name2', 'name3'];
     const email = ['n1@mail.ru','n2@mail.ru','n3@mail.ru']
     const password = ['123', '123', '123'];
+    
     for (let i=0; i<3; i++) {
       await User.create({
-        name: username[i],
+        name: name[i],
         email: email[i],
         password: password[i],
+      });
+    }
+
+    const  groupName = ['Фильмы', 'Страны', 'Эльбрус']
+    const groupImage = ['https://www.soyuz.ru/public/uploads/files/5/6923170/1005x558_20170113134556222f070119.jpg', 
+    'https://ic.pics.livejournal.com/dymontiger/54234047/7434083/7434083_original.jpg', 
+    'https://i.postimg.cc/Prz81N7T/Fotoram-io-1.jpg'];
+    for (let i = 0; i < 3; i++) {
+      await Group.create({
+        groupName: groupName[i],
+        groupImage: groupImage[i],
+      });
+    }
+
+    const topicName = ['Общие вопросы', 'Комедии', 'Актеры']
+    const groupId = 1
+    const topicName2 = ['Россия', 'Япония', 'Франция']
+    const groupId2 = 2;
+    const topicName3 = ['Вопросы1', 'Вопросы2', 'Актеры3']
+    const groupId3 = 3;  
+
+    for (let i = 0; i < 3; i++) {
+      await Topic.create({
+        topicName: topicName[i],
+        groupId: groupId,
+      });
+      await Topic.create({
+        topicName: topicName2[i],
+        groupId: groupId2,
+      });
+      await Topic.create({
+        topicName: topicName3[i],
+        groupId: groupId3,
       });
     }
     // while (amount--) {

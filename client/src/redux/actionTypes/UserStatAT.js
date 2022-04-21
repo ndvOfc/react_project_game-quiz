@@ -1,0 +1,1 @@
+export const INIT_STAT_USERS ='INIT_STAT_USERS'

@@ -13,10 +13,10 @@ function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-        <div className="App">
-          Hello World
           <Topic/>
-        </div>
+        <Routes>
+          {/* <Route path="/groups/:id" element={<Topic/>}></Route> */}
+        </Routes>
       </Provider>
     </BrowserRouter>
   );

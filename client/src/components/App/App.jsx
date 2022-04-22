@@ -27,25 +27,8 @@ function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-
-          <TopicList />
-        
+       
         <Routes>
-          {/* <Route path="/groups/:id" element={<Topic/>}></Route> */}
-        </Routes>
-
-        <div className="App">
-
-          <Navbar/>
-          <UserStat/>
-          <Routes>
-            <Route path="/stats" element={<UserStat />}></Route>
-            <Route path="/profile" element={<Profile />}></Route>
-          </Routes>
-          {/* <Profile /> */}
-          {/*<Cabinet/>*/}
-          {/*<Topic/>*/}
-
 
           <Routes>
             <Route path="/" element={<Login/>}></Route>
@@ -65,6 +48,7 @@ function App() {
           </Routes>
 
         </div>
+
 
       </Provider>
     </BrowserRouter>

@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Registration = () => {
  const name = useRef()
  const email = useRef()
  const password = useRef()
-
+const navigate = useNavigate()
 
 
     const regUser = async (event) => {

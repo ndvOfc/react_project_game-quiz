@@ -22,7 +22,7 @@ function App() {
       <Provider store={store}>
         <div className="App">
           <Profile/>
-          {/*<Cabinet/>*/}
+          <Cabinet/>
           {/*<Topic/>*/}
         </div>
       </Provider>

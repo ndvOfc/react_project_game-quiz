@@ -4,18 +4,23 @@ import {initStatUsersAC} from "../../redux/actionCreators/UserStatAC";
 import UserStat from "../UserStat/UserStat";
 
 function Cabinet() {
+
+
+
     const dispatch=useDispatch()
     const {users}=useSelector(state => state.users)
     useEffect(()=>{
-        fetch('api/stats')
+        fetch('http://localhost:5000/api/state')
             .then(res =>res.json())
-            .then(data=>dispatch(initStatUsersAC(data)))
+            .then(data=> dispatch(initStatUsersAC(data)))
             .catch(err => console.log(err.message))
     },[dispatch])
 
+    // console.log(users)
+
 
     return (
-        <table align="center" border="3" cellpadding="7">
+        <table align="center" border="3" cellPadding="7">
             <thead>
             <tr>
                 <td>Имя</td>

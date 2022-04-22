@@ -35,7 +35,6 @@ const Login = () => {
 
 }
 
-    console.log(user)
 return (
 
 

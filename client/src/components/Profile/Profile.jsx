@@ -1,7 +1,8 @@
 import React from 'react';
+import {useSelector} from "react-redux";
 
 function Profile() {
-    // const {id} = req.cookies
+    const {user} = useSelector(state => state.user)
     // const user = await fetch('api/statOne', {
     //     method: 'POST',
     //     headers: {'Content-Type': 'application/json'},
@@ -9,6 +10,8 @@ function Profile() {
     // })
     //     .then((res) => res.json())
     // const user = {name: 'Lalaila', games: 13, totalScore: 23, rightAnswers: 12, wrongAnswers: 3}
+
+    // console.log(user)
 
     return (
         <div>

@@ -2,8 +2,6 @@ import React from 'react';
 
 function UserStat({user}) {
 
-    console.log(user)
-
     return (
         <tr>
             <td>{user.name}</td>

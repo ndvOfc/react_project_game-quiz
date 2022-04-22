@@ -14,13 +14,13 @@ function Profile() {
     // console.log(user)
 
     return (
-        <div>
-            {/*<div>Ваше Имя:{user.name}</div>*/}
-            {/*<div>Количество Игр:{user.games}</div>*/}
-            {/*<div>Ваш скор:{user.totalScore}</div>*/}
-            {/*<div>Правильыне ответы:{user.rightAnswers}</div>*/}
-            {/*<div>Неправильные ответы:{user.wrongAnswers}</div>*/}
-            {/*<div>Статистика:{(user.totalScore / user.games).toFixed(2)}</div>*/}
+        <div className="container my-5">
+            <div>Ваше Имя:{user.name}</div>
+            <div>Количество Игр:{user.games}</div>
+            <div>Ваш скор:{user.totalScore}</div>
+            <div>Правильыне ответы:{user.rightAnswers}</div>
+            <div>Неправильные ответы:{user.wrongAnswers}</div>
+            <div>Статистика:{(user.totalScore / user.games).toFixed(2)}</div>
         </div>
     );
 }

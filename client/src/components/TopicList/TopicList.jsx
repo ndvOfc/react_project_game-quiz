@@ -9,24 +9,25 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const TopicList = () => {
-// const {id} = useParams()
+const {id} = useParams()
   // const {groups} = useSelector(state => state.groups);
   const  {topics} = useSelector(state => state.topics);
+
   const dispatch = useDispatch();
 
-
+console.log(id)
 
 
 
 
   useEffect(()=>{
-    fetch('http://localhost:5001/api/group/1')
+    fetch('http://localhost:5000/api/group/'+ `${id}`)
     .then(res=>res.json())
     .then(data=>   dispatch(initTopicsAC(data))
     )
   },[dispatch])
 
-
+console.log(topics)
 
   return (
     <div>

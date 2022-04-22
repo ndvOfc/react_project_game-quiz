@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
 import {UserStatReducer} from "./UserStatReducer";
-
 import { userReducer } from "./userReducer"
 import { groupReducer } from "./groupReducer"
+import  topicReducer  from "./topicsReducer"
 
 export const rootReducer = combineReducers({
     users: UserStatReducer,
     user: userReducer,
-    group: groupReducer
-
+    group: groupReducer,
+    topics: topicReducer
 })

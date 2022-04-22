@@ -17,8 +17,8 @@ const GroupList = () => {
 console.log(group)
     return (
         <div className="container h-100">
-            <Link to="/state" className="btn btn-outline-dark p-3 my-4 mx-4">The best of The Best</Link>
-            <Link to="/state" className="btn btn-outline-dark p-3">Профиль</Link>
+            <Link to="/cabinet" className="btn btn-outline-dark p-3 my-4 mx-4">The best of The Best</Link>
+            <Link to="/profile" className="btn btn-outline-dark p-3">Профиль</Link>
             <div className="row align-middle h-60">
 
                  {group.map(el => <GroupCard key={el.id} themes={el}/> )}

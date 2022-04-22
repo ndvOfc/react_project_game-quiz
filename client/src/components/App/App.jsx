@@ -22,27 +22,11 @@ function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
-<<<<<<< HEAD
           <TopicList />
         
         <Routes>
           {/* <Route path="/groups/:id" element={<Topic/>}></Route> */}
         </Routes>
-=======
-        <div className="App">
-          {/*<Login/>*/}
-          {/*<Registration/>*/}
-          <Routes>
-            <Route path="/" element={<Login/>}></Route>
-            <Route path="/registration" element={<Registration/>}></Route>
-            {/*<GroupList/>*/}
-            {/*<Registration/>*/}
-            {/*<Profile/>*/}
-            {/*<Cabinet/>*/}
-            {/*<Topic/>*/}
-          </Routes>
-        </div>
->>>>>>> 9736f2deb1b1c41d84c60889263992770b7dd93e
       </Provider>
     </BrowserRouter>
   );

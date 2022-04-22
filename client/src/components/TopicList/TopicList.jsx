@@ -25,12 +25,14 @@ const TopicList = () => {
     .then(data=>   dispatch(initTopicsAC(data))
     )
   },[dispatch])
-
-
+ 
+console.log(topics)
 
   return (
     <div>
-    {topics.length > 0 && topics.map(topic =>  <Topic key={uuidv4()} topic={topic}/>)}
+    {/* {topics.length > 0 && topics.map(topic =>  <Topic key={uuidv4()} topic={topic}/>)} */}
+    {topics.length > 0 && topics.map(topic => (
+      <><h1 key={uuidv4()}>{topic.topic}</h1><div>{topic.questions.map( el => <Topic  topic={el}/>)}</div></>))}
     </div>
   )
 }

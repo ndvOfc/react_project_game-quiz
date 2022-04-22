@@ -13,6 +13,7 @@ import GroupList from "../GroupList/GroupList"
 import Question from "../Question/Question";
 import Prifole from "../Profile/Profile";
 import Profile from "../Profile/Profile";
+import TopicList from "../TopicList/TopicList";
 
 
 
@@ -21,6 +22,13 @@ function App() {
   return (
     <BrowserRouter>
       <Provider store={store}>
+<<<<<<< HEAD
+          <TopicList />
+        
+        <Routes>
+          {/* <Route path="/groups/:id" element={<Topic/>}></Route> */}
+        </Routes>
+=======
         <div className="App">
           {/*<Login/>*/}
           {/*<Registration/>*/}
@@ -34,6 +42,7 @@ function App() {
             {/*<Topic/>*/}
           </Routes>
         </div>
+>>>>>>> 9736f2deb1b1c41d84c60889263992770b7dd93e
       </Provider>
     </BrowserRouter>
   );

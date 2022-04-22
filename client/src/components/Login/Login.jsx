@@ -1,13 +1,13 @@
 import React, {useRef, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { authUser } from "../../redux/actionCreators/userAC"
 import jwt_decode from 'jwt-decode';
 
 const Login = () => {
     const dispatch = useDispatch()
     const { user } = useSelector(state => state.user)
-
+    const navigate = useNavigate()
 
     const name = useRef()
     const email = useRef()
@@ -30,6 +30,7 @@ const Login = () => {
                 const data = await response.json()
                 const user = jwt_decode(data.token)
                 dispatch(authUser(user))
+                navigate('/main')
 
 
 
@@ -70,6 +71,9 @@ return (
                                     </div>
                                     <div className="m-auto">
                                         <Link to="/registration" className="text-white-50 fw-bold">Регистрация</Link>
+                                    </div>
+                                    <div className="m-auto">
+                                        <Link to="/main" className="text-white-50 fw-bold">На главную</Link>
                                     </div>
                                 </div>
                                 <div>

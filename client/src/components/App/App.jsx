@@ -50,8 +50,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Login/>}></Route>
             <Route path="/registration" element={<Registration/>}></Route>
+
+            <Route path="/main" element={<GroupList/>}></Route>
+            {/*<Route path="/group/:id" element={<Topic/>}></Route>*/}
+
             <Route path="/cabinet" element={<Cabinet/>}></Route>
             <Route path="/profile" element={<Profile/>}></Route>
+
             {/*<GroupList/>*/}
             {/*<Registration/>*/}
             {/*<Profile/>*/}

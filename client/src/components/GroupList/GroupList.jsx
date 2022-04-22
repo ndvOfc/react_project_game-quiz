@@ -1,52 +1,30 @@
-import React from 'react';
+import React,  { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { initGroup } from '../../redux/actionCreators/groupAC'
+import  GroupCard  from '../GroupCard/GroupCard'
+import { Link } from 'react-router-dom'
+
 
 const GroupList = () => {
+    const dispatch = useDispatch()
+    const {group} = useSelector(state => state.group)
+    useEffect(() => {
+        fetch('http://localhost:5000/api/group')
+            .then(res => res.json())
+            .then(data => dispatch(initGroup(data)))
+    },[dispatch])
+
+console.log(group)
     return (
+        <div className="container h-100">
+            <Link to="/state" className="btn btn-outline-dark p-3 my-4 mx-4">The best of The Best</Link>
+            <Link to="/state" className="btn btn-outline-dark p-3">Профиль</Link>
+            <div className="row align-middle h-60">
 
-        <div class="container h-100">
-            <div class="row align-middle">
-                <div class="col-md-6 col-lg-4 column">
-                    <div class="card gr-1">
-                        <div class="txt">
-                            <h1>BRANDING AND
-                            CORPORATE DESIGN</h1>
-                        <p>Visual communication and problem-solving</p>
-                    </div>
-                    <a href="#">more</a>
-                    <div class="ico-card">
-                        <i class="fa fa-rebel"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 column">
-                <div class="card gr-2">
-                    <div class="txt">
-                        <h1>Web Front-End
-                        SOLUTIONS</h1>
-                    <p>How design is implemented on the web.</p>
-                </div>
-                <a href="#">more</a>
-                <div class="ico-card">
-                    <i class="fa fa-codepen"></i>
-                </div>
+                 {group.map(el => <GroupCard key={el.id} themes={el}/> )}
+
             </div>
         </div>
-    <div class="col-md-6 col-lg-4 column">
-        <div class="card gr-3">
-            <div class="txt">
-                <h1>UX/UI WEBsite
-                AND MOBILE app</h1>
-            <p>User Interface and User Experience Design.</p>
-        </div>
-        <a href="#">more</a>
-        <div class="ico-card">
-            <i class="fa fa-empire"></i>
-        </div>
-    </div>
-</div>
-
-</div>
-</div>
     );
 };
 

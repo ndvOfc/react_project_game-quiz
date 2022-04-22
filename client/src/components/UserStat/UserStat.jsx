@@ -4,7 +4,7 @@ function UserStat({user}) {
 
     return (
         <tr>
-            <td>{user.userName}</td>
+            <td>{user.name}</td>
             <td>{user.games}</td>
             <td>{user.totalScore}</td>
             <td>{user.rightAnswers}</td>

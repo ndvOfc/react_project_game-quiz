@@ -1,11 +1,13 @@
 import React, {useRef, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
+import { Link } from 'react-router-dom'
 import { authUser } from "../../redux/actionCreators/userAC"
 import jwt_decode from 'jwt-decode';
 
 const Login = () => {
     const dispatch = useDispatch()
     const { user } = useSelector(state => state.user)
+
 
     const name = useRef()
     const email = useRef()
@@ -35,24 +37,55 @@ const Login = () => {
 
     console.log(user)
 return (
-    <div className="container mt-2">
-        <form onSubmit={logUser}>
-            <h2>Login</h2>
-            <div className="mb-3">
-                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-                <input ref={email} name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+
+
+
+    <section className="vh-100 gradient-custom">
+        <div className="container py-5 h-100">
+            <div className="row d-flex justify-content-center align-items-center h-100">
+                <form onSubmit={logUser} className="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div className="card bg-dark text-white" style={{borderRadius: '1rem'}}>
+                        <div className="card-body p-5 text-center">
+
+                            <div  className="mb-md-5 mt-md-4 pb-5">
+
+                                <h2 className="fw-bold mb-2 text-uppercase">Вход</h2>
+                                <p className="text-white-50 mb-5">Введите логин и пароль</p>
+
+
+                                <div className="form-outline form-white mb-4">
+                                    <input ref={email} type="email" id="typeEmailX" className="form-control form-control-lg"/>
+                                    <label className="form-label" htmlFor="typeEmailX">Эл. почта</label>
+                                </div>
+
+                                <div className="form-outline form-white mb-4 mt-4">
+                                    <input ref={password} type="password" id="typePasswordX" className="form-control form-control-lg"/>
+                                    <label className="form-label" htmlFor="typePasswordX">Пароль</label>
+                                </div>
+
+
+                                <button className="btn btn-outline-light btn-lg px-5" type="submit">Вход</button>
+                                <div className="form-outline form-white mb-4">
+
+                                    <div className="mt-4">Нет аккаунта?
+                                    </div>
+                                    <div className="m-auto">
+                                        <Link to="/registration" className="text-white-50 fw-bold">Регистрация</Link>
+                                    </div>
+                                </div>
+                                <div>
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </form>
             </div>
-            <div className="mb-3">
-                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-                <input ref={password} name="password" type="password" className="form-control" id="exampleInputPassword1"/>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-            <div className="mb-3">
-                <h2>{user.name}</h2>
-            </div>
-        </form>
-    </div>
+        </div>
+    </section>
 
 );
 };

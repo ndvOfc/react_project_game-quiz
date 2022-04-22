@@ -8,7 +8,9 @@ import {store} from '../../redux/store'
 import Topic from "../Topic/Topic";
 
 import Cabinet from "../Cabinet/Cabinet";
-
+import Registration from "../Registration/Registration"
+import Login from "../Login/Login"
+import GroupList from "../GroupList/GroupList"
 import Question from "../Question/Question";
 import Prifole from "../Profile/Profile";
 import Profile from "../Profile/Profile";
@@ -21,7 +23,10 @@ function App() {
     <BrowserRouter>
       <Provider store={store}>
         <div className="App">
-          <Profile/>
+          <GroupList/>
+          {/*<Login/>*/}
+          {/*<Registration/>*/}
+          {/*<Profile/>*/}
           {/*<Cabinet/>*/}
           {/*<Topic/>*/}
         </div>

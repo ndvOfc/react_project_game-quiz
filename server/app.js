@@ -6,7 +6,7 @@ require('dotenv').config();
 const express = require('express');
 const sequelize = require('./db/db');
 const routerApi = require('./routes/index');
-// const errorHandler = require('./middleware/ErrorHandlingMiddleware')
+const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 const serverConfig = require('./server_config/serverConfig')
 
 const PORT = process.env.PORT ?? 5000;
@@ -19,7 +19,7 @@ serverConfig(app)
 app.use('/api', routerApi)
 
 // Middleware для обработки ошибок обязательно должен быть в самом конце
-// app.use(errorHandler)
+app.use(errorHandler)
 
 // Функция запуска сервера с обработчиком ошибки
 const startServer = async () => {

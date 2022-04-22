@@ -1,13 +1,24 @@
+import { TOPICS_INIT } from "../actionTypes/topicsAT"
 
-// const initialState = { topics: [], questions: [], sessionScore: 0}
+const initialState = [{
+  id: 1,
+  theme: 'geo',
+  questionRun: [['Вопрос', 'Ответ1', 'цена'], ['Вопрос', 'Ответ1', 'цена'], ['Вопрос', 'Ответ1', 'цена'], ['Вопрос', 'Ответ1', 'цена'], ['Вопрос', 'Ответ1', 'цена']],
 
-// const topicsReducer = (state = initialState, action) => {
-//   switch (action.type) {
-//     case CHANGE_SCORE:
-//       let copyTopicsQuestionScore = {...state}
-//       copyTopicsQuestionScore.sessionScore += state.sessionScore
-//       return { ...state}
-//   }
-// }
+}, 
+{
+  id: 2,
+  theme: 'geo',
+  questionRun: [['Вопрос2', 'Ответ2', 'цена2'], ['Вопрос2', 'Ответ2', 'цена2'], ['Вопрос2', 'Ответ2', 'цена2'], ['Вопрос2', 'Ответ2', 'цена2'], ['Вопрос2', 'Ответ2', 'цена2']]
+}];
 
-// export default topicsReducer;
+const topicsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case TOPICS_INIT:
+      return { ...state, topics: action.payload}
+    default:
+      return state
+  }
+}
+
+export default topicsReducer;

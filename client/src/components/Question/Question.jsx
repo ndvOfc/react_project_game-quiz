@@ -10,13 +10,9 @@ function Question({question, answer}) {
     return result;
   }
 
-  
-console.log(question);
-
   return (
     <div>
             <div>
-              <div>{question}</div>
               <div class="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">

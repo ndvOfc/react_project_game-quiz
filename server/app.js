@@ -9,7 +9,7 @@ const routerApi = require('./routes/index');
 const errorHandler = require('./middleware/ErrorHandlingMiddleware')
 const serverConfig = require('./server_config/serverConfig')
 
-const PORT = process.env.PORT ?? 5000;
+const PORT = process.env.PORT ?? 5001;
 
 const app = express();
 

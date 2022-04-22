@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { initTopicsAC } from "../../redux/actionCreators/topicsAC";
 import { useNavigate } from 'react-router-dom';
@@ -9,47 +9,57 @@ import css from './Topic.module.css'
 
 
 const Topic = (props) => {
+  const [isStatus, setStatus] = useState(false);
 
-  const question = props.topic.questionRun
-  const theme = props.topic.theme
+  const question = props.topic.questions
+  const theme = props.topic.topic
+  
+
+  const changeStatus = () => {
+    return setStatus(isStatus => !isStatus)
+  }
 
 
-
-
-  // это стейт который делает ден
-  // const {group}=useSelector(state => state.group);
-  // const {questions}= useSelector(state => state.questions)
-  // const dispatch = useDispatch();
-  // useEffect(()=>{
-  //   fetch('/questions')
-  //   .then(res=>res.json())
-  //   .then(data=>dispatch((data[0]),(data[1])))
-  // },[dispatch])
 
   return (
     <div className="container">
       <div className="row row-cols-6 my-2">
         <div className="col">{theme}</div>
-        {/* <div className="col">{topic[0].topicName}</div> */}
+        <div className="col">
+        {
+          isStatus ? 
+          <button onClick={changeStatus} type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
+          {question[0].price}
+          <Question question={question[0].questions} answer={question[0].answers}/>
+          </button> :        
+           <button onClick={changeStatus} type="button" class="btn btn-outline-danger"data-bs-toggle="modal" data-bs-target="#exampleModal" disabled>Завершен</button>
+        }
+        </div>
+        <div className="col">
+        {
+          isStatus ? 
+          <button onClick={changeStatus} type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
+          {question[1].price}
+          <Question question={question[1].questions} answer={question[1].answers}/>
+          </button> :        
+           <button onClick={changeStatus} type="button" class="btn btn-outline-danger"data-bs-toggle="modal" data-bs-target="#exampleModal">Завершен</button>
+        }
+        {/* <button  type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
+        {question[1].price}
+        <Question question={question[1].questions} answer={question[1].answers}/>
+        </button> */}
+        </div>
         <div className="col"><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
-        {question[0][2]}
-        <Question question={question[0][0]} answer={question[0][1]}/>
-        </button></div>
-        <div className="col"><button  type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
-        {question[1][2]}
-        <Question question={question[1][0]} answer={question[1][1]}/>
+        {question[2].price}
+        <Question question={question[2].questions} answer={question[2].answers}/>
         </button></div>
         <div className="col"><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
-        {question[2][2]}
-        <Question question={question[2][0]} answer={question[2][1]}/>
+        {question[3].price}
+        <Question question={question[3].questions} answer={question[3].answers}/>
         </button></div>
         <div className="col"><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
-        {question[3][2]}
-        <Question question={question[3][0]} answer={question[3][1]}/>
-        </button></div>
-        <div className="col"><button type="button" class="btn btn-primary"data-bs-toggle="modal" data-bs-target="#exampleModal">
-        {question[4][2]}
-        <Question question={question[4][0]} answer={question[4][1]}/>
+        {question[4].price}
+        <Question question={question[4].questions} answer={question[4].answers}/>
         </button></div>
       </div>
     </div>

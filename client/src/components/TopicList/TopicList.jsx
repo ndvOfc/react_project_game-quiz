@@ -4,38 +4,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { initTopicsAC } from "../../redux/actionCreators/topicsAC";
 import { useParams } from "react-router-dom";
 import Question from "../Question/Question";
+import { v4 as uuidv4 } from 'uuid';
 // import Question from "../Question/Question";
 
 
 const TopicList = () => {
-
+// const {id} = useParams()
   // const {groups} = useSelector(state => state.groups);
-  const topics = useSelector(state => state.topics);
+  const  {topics} = useSelector(state => state.topics);
   const dispatch = useDispatch();
 
 
 
 
 
-  // useEffect(()=>{
-  //   fetch(`/groups/${id}`)
-  //   .then(data = data.json())
-  //   .then(res = dispatch(initTopicsAC(res)))
-  // }, [dispatch])
 
-  // useEffect(() => {
-  //   dispatch(initTopicsAC(obj))
-  // }, [dispatch])
- 
-  // dispatch(initTopicsAC(obj))
+  useEffect(()=>{
+    fetch('http://localhost:5001/api/group/1')
+    .then(res=>res.json())
+    .then(data=>   dispatch(initTopicsAC(data))
+    )
+  },[dispatch])
 
 
-  // console.log(topics);
 
   return (
     <div>
-      {/* {groups.map(topic => <Topic key={topic[0].id} topic={topic}/>)} */}
-    {topics.length > 0 && topics.map(topic => <Topic key={topic.id} topic={topic}/>)}
+    {topics.length > 0 && topics.map(topic =>  <Topic key={uuidv4()} topic={topic}/>)}
     </div>
   )
 }

@@ -12,7 +12,7 @@ const serverConfig = (app) => {
 
     // Подключаем cors для получения запросов с клиента,
     // будет необходим в дальнейшем при создании фронта на реакт
-    app.use(cors());
+    app.use(cors({origin:['http://localhost:3000']}));
 
     // Подключаем json для работы с json форматом
     app.use(express.json());
